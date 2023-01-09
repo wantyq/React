@@ -1,9 +1,3 @@
-.stars {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-}
-
 p, h6 {
     margin: 0px;
 }

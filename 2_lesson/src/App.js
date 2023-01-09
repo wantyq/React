@@ -26,6 +26,49 @@ Product.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number
 };
-
+// const App = () => {
+//   // const name = "Saidas";
+//   // const arr = [1, 2];
+//   // const first = arr[0];
+//   // const second = arr[1];
+//   // const [first, second] = arr;
+//   const [name, setName] = useState("saidas");
+//   const [age, setAge] = useState(28);
+//   const [count, setCount] = useState(0);
+  
+//   return (
+//     <div>
+//       <Button onClick={() => alert("Sveiki visi")}>Say hello</Button>
+//       <Button onClick={() => alert("Viso gero")} backgroundColor="blue">Say hello</Button>
+//       <Button backgroundColor={0} onClick={() => {
+//         setName("Tadas");
+//       }}
+//       >{name}</Button>
+//       <Button
+// backgroundColor="green"
+// onClick={() => {
+//   setAge(age * 2);
+// }}
+// >
+// Help my age is: {age}
+// </Button>
+// <Button
+// backgroundColor="red"
+// onClick={() => {
+//   setName("Tadas");
+// }}
+// >
+// {name}
+// </Button>
+// <Button onClick={() => {
+//   setCount(count + 1)
+// }}>Plus one</Button>
+// <span style={{ fontSize: 20, color: "blue", margin: "0 10px" }}>{count}</span>
+// <Button backgroundColor="black" onClick={() => {
+//   setCount(count - 1)
+// }}>Minus one</Button>
+//     </div>
+//   )
+// }
 
 export default App;
