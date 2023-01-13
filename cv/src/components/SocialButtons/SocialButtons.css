@@ -1,0 +1,19 @@
+.social-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.social-btn:hover {
+    transition: 0.4s;
+    background-color: rgb(234, 251, 253);
+}
