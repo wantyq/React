@@ -1,0 +1,9 @@
+.add {
+    text-transform: uppercase;
+    background-color: rgb(223, 189, 254);
+    padding: 10px 25px;
+    letter-spacing: 1px;
+    margin-left: 30px;
+    height: 40px;
+    border: none;
+}

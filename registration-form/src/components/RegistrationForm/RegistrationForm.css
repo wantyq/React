@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(242, 252, 248);
+}
+
+.registrationForm {
+    background-color: rgb(230, 227, 227);
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px
+}
+
+form {
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+}
+
+input, select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: none;
+    background-color: rgb(250, 248, 248);
+    width: 100%;
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+p {
+    padding-right: 30px;
+    font-weight: 700;
+}
+
+.rowRadio {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.radioBtn {
+    max-width: 150px;
+    display: flex;
+    flex-direction: row;
+}
+
+.header {
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 15px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.register {
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-color: rgb(248, 176, 176);
+}
+
+.register:hover {
+    background-color: rgb(240, 140, 140);
+}

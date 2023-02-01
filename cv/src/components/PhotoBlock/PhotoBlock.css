@@ -1,0 +1,7 @@
+.my-photo {
+    background-image: url("../images/me.jpg");
+    background-size: cover;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+}

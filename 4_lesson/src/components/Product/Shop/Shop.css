@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid rgb(219, 218, 218);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 0px;
+}
+
+p {
+    margin: 0px;
+    padding: 5px;
+}
+
+.price {
+    font-size: 1.3rem;
+    color: red;
+    font-weight: 700;
+}
+
+.deleteBtn {
+    background-color: transparent;
+    border: 1px solid rgb(219, 218, 218);
+    padding: 5px 12px;
+    margin-top: 10px;
+}
