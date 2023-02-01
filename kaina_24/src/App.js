@@ -1,30 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import xml2js from 'xml2js';
+import Routes from './routes/Routes';
 
-function App() {
-  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get(`${process.env.REACT_APP_PROXY_URL}https://devinera.com/wp-content/uploads/woo-product-feed-pro/xml/SQlxGOe9FEwXekgPiVviPDWrD7vcZjRA.xml`);
-      const xml = res.data;
-      const parseString = xml2js.parseString;
-      parseString(xml, (err, result) => {
-        if (err) console.error(err);
-        setProducts(result.products.product.map(p => p.title[0]));
-      });
-    };
-    fetchData();
-  }, []);
 
+// const App = () => {
+//   const [data, setData] = useState(null);
+
+//   useEffect(() => {
+//     axios
+//       .get(`http://localhost:8080/api/xml-data`)
+//       .then((res) => {
+//         setData(res.data.products.product);
+//         console.log(res.data.products.product);
+//       })
+//       .catch((err) => {
+//         console.error(err);
+//       });
+//   }, []);
+
+//   return (
+//     <div>
+//       {data ? <div>{data.map((item) => {
+//         return <p>{item.name} {item.image_link}</p>
+//       })}
+//       </div> : <div>Loading...</div>}
+//     </div>
+//   );
+// }
+
+const App = () => {
   return (
-    <ul>
-      {products.map(product => (
-        <li key={product}>{product}</li>
-      ))}
-    </ul>
-  );
+    <Routes />
+  )
 }
 
+
 export default App;
+
