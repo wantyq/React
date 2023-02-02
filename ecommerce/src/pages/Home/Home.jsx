@@ -12,10 +12,9 @@ const ProductContainer = styled.div`
 `;
 
 const Container = styled.div`
-  background-color: #fafafa;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 

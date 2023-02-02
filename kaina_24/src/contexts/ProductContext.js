@@ -5,11 +5,12 @@ const ProductContext = createContext();
 
 const transformData = (products) => {
     return products.map((product) => ({
-      ...product, image: JSON.parse(product.image), 
-      name: JSON.parse(product.name), }));
+      ...product, image: "product.image", 
+      name: "name", 
+    }));
   };
 
-const ProductProvider = () => {
+const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 

@@ -1,16 +1,17 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { ProductContext } from "../../../contexts/ProductContext";
 import { useContext, useState } from "react";
+import { generatePath } from "react-router-dom";
 import styled from "styled-components";
 import { capitalizeFirstLetter } from "../../../utils/string"; 
 import Select from "react-select";
 import { screenSize } from "../../../consts/mediaQueries";
 import { getUniqueArrayItems } from "../../../utils/array"
 import { lightBorderColor } from "../../../consts/colors";
+import { PRODUCT_PATH } from "../../../routes/const";
 
 const ProductContainer = styled.div`
   display: grid;
-  padding: 40px;
   gap: 20px;
   grid-template-columns: repeat(4, 1fr);
 `;
@@ -49,7 +50,7 @@ const ProductProperty = styled.p`
 `;
 
 const FiltersContainer = styled.div`
-  padding: 40px 40px 0px 40px;
+  margin-bottom: 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
@@ -71,14 +72,13 @@ const Products = () => {
     const { products } = useContext(ProductContext);
     const [selectedColors, setSelectedColors] = useState([]);
 
-    console.log(products);
+    const navigate = useNavigate();
+
     const isCategory = (product) => product.type === category;
     const categoryProducts = products.filter(isCategory);
-    console.log(categoryProducts);
 
     const colors = categoryProducts.map(product => product.color.toLowerCase());
     const uniqueColors = getUniqueArrayItems(colors);
-    console.log(uniqueColors);
     const colorOptions = uniqueColors.map(color => ({
       value: color, 
       label: capitalizeFirstLetter(color),
@@ -93,6 +93,11 @@ const Products = () => {
     ? filteredByColorProducts 
     : categoryProducts;
 
+    const navigateToProduct = (category, productId) => {
+      const path = generatePath(PRODUCT_PATH, { category, productId });
+      navigate(path);
+    };
+
   return (
     <div>
       <FiltersContainer>
@@ -106,7 +111,8 @@ const Products = () => {
         </Filter>
       </FiltersContainer>
       <ProductContainer>
-        {filteredProducts.map(product => <ProductItem key={product.id}>
+        {filteredProducts.map(product => 
+        <ProductItem key={product.id} onClick={() => navigateToProduct(category, product.id)}>
           <img src={product.picUrl[0]} alt={product.name} />
           <ProductProperty>{capitalizeFirstLetter(product.name.toLowerCase())}</ProductProperty>
           <ProductProperty>$ {product.price}</ProductProperty>

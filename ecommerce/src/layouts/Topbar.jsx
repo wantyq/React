@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import SearchBar from "../components/Button/SearchBar/SearchBar";
 import { lightBorderColor } from "../consts/colors"
+import { Link } from "react-router-dom";
+import { HOME_PATH } from "../routes/const";
 
 const Container = styled.div`
     padding: 6px 30px;
@@ -19,13 +21,16 @@ const NavigationItem = styled.div`
 const Logo = styled.div`
   font-weight: 700;
   font-size: 28px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
 `;
 
 const Topbar = () => {
   return (
     <Container>
         <NavigationItem>Categories</NavigationItem>
-        <Logo>Shopyzee</Logo>
+        <Logo as={Link} to={HOME_PATH}>Shopyzee</Logo>
         <SearchBar>Searchbar</SearchBar>
     </Container>
   )

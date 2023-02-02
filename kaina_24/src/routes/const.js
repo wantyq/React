@@ -9,6 +9,8 @@ export const routes = [{
     path: HOME_PATH,
     Component: Home,
 },
-{ path: PRODUCT_LIST_PATH, Component: Products,
+{  
+    path: PRODUCT_LIST_PATH, 
+    Component: Products,
 },
 ];
